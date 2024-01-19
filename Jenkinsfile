@@ -14,15 +14,15 @@ pipeline {
         git branch: 'main', changelog: false, poll: false, url: 'https://github.com/todd-duck/duck-clinic.git'
       }
     }
-    /*stage('Compile') {
+    stage('Compile') {
        steps {
-         sh './mvnw compile' //only compilation of the code
+         sh `./mvnw compile` //only compilation of the code
        }
-    }*/
+    }/*
     stage('Build') {
       steps {
-        build 'jfrog_interview_project'
+        sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
       }
-    }
+    }*/
   }
 }
