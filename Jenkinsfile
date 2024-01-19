@@ -19,10 +19,10 @@ pipeline {
     }
     stage('Compile') {
        steps {
-         sh ""
+         sh "
          cd /var/jenkins_home/workspace/jfrog_interview_project
          ./mvnw compile
-         "" //only compilation of the code
+         " //only compilation of the code
        }
     }/*
     stage('Build') {
