@@ -10,5 +10,10 @@ pipeline {
         git branch: 'main', changelog: false, poll: false, url: 'https://github.com/todd-duck/duck-clinic.git'
       }
     }
+    stage('Compile') {
+       steps {
+         sh 'mvn compile' //only compilation of the code
+       }
+    }
   }
 }
