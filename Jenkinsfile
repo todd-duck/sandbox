@@ -1,7 +1,7 @@
 pipeline {
   environment {
     JAVA_HOME = '/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/bin'
-    PATH = $PATH:$JAVA_HOME
+     PATH = "${env.JAVA_HOME}:${env.PATH}"
   }
   agent any
   tools {
