@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/todd-duck/duck-clinic.git'
+        git branch: 'main', changelog: false, poll: false, url: 'https://github.com/todd-duck/duck-clinic.git'
       }
     }
     stage('Compile') {
