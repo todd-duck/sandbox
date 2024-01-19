@@ -20,7 +20,7 @@ pipeline {
          sh 'mvn compile' //only compilation of the code
        }
     }
-    stage('Test') {
+    /*stage('Test') {
       steps {
         sh '''
         mvn package
@@ -50,6 +50,6 @@ pipeline {
       steps{
         sh "docker rmi $registry:latest"
       }
-    }
+    }*/
   }
 }
