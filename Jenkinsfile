@@ -1,7 +1,7 @@
 pipeline {
   environment {
     HOME = '/var/jenkins_home'
-    mvnHome = '/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven-3'
+    MVNHome = '/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven-3'
     JAVA_HOME = '/var/jenkins_home/tools/hudson.model.JDK/Java17/jdk-17.0.10/bin'
     PATH = '/var/jenkins_home/tools/hudson.model.JDK/Java17/jdk-17.0.10.jdk/bin:/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven-3/bin'
   }
@@ -23,7 +23,7 @@ pipeline {
     }*/
     stage('Build') {
       steps {
-        sh "$mvnHome/bin/mvn -Dmaven.test.failure.ignore clean package"
+        sh "$MVNHome/bin/mvn -Dmaven.test.failure.ignore clean package"
       }
     }
   }
