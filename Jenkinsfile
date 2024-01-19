@@ -23,6 +23,7 @@ pipeline {
     stage('Package') {
       steps {
         sh 'mvn clean package'
+        // docker.build image: 'my-image', tag: 'latest'
         }
       }
     }  
