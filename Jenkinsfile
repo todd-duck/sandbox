@@ -3,6 +3,7 @@ pipeline {
     HOME = '/var/jenkins_home'
     MVNHome = '/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven-3'
     JAVA_HOME = '/var/jenkins_home/tools/hudson.model.JDK/Java17/jdk-17.0.10/bin'
+    WORKDIR = '/var/jenkins_home/workspace/jfrog_interview_project'
     PATH = '/var/jenkins_home/tools/hudson.model.JDK/Java17/jdk-17.0.10.jdk/bin:/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven-3/bin'
   }
   agent any
@@ -16,15 +17,16 @@ pipeline {
         git branch: 'main', changelog: false, poll: false, url: 'https://github.com/todd-duck/duck-clinic.git'
       }
     }
-    /*stage('Compile') {
+    stage('Compile') {
        steps {
-         sh './$HOME/mvnw compile' //only compilation of the code
+         sh ""
+         ./$WORKDIR/mvnw compile //only compilation of the code
        }
-    }*/
+    }/*
     stage('Build') {
       steps {
         sh "$MVNHome/bin/mvn -Dmaven.test.failure.ignore clean package"
       }
-    }
+    }*/
   }
 }
