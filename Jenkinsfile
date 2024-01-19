@@ -1,4 +1,7 @@
 pipeline {
+  environment {
+    JAVA_HOME = /Library/Java/JavaVirtualMachines/jdk-21.jdk
+  }
   agent any
   tools {
     maven 'maven-3'
