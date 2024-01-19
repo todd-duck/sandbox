@@ -1,7 +1,8 @@
 pipeline {
   environment {
+    HOME = '/var/jenkins_home'
     JAVA_HOME = '/var/jenkins_home/tools/hudson.model.JDK/Java17/jdk-17.0.10/bin'
-     PATH = '/var/jenkins_home/tools/hudson.model.JDK/Java17/jdk-17.0.10.jdk/bin:/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven-3/bin'
+    PATH = '/var/jenkins_home/tools/hudson.model.JDK/Java17/jdk-17.0.10.jdk/bin:/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/maven-3/bin'
   }
   agent any
   tools {
@@ -16,7 +17,7 @@ pipeline {
     }
     stage('Compile') {
        steps {
-         sh `./mvnw compile` //only compilation of the code
+         sh './$HOME/mvnw compile' //only compilation of the code
        }
     }/*
     stage('Build') {
