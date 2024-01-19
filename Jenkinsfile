@@ -19,9 +19,7 @@ pipeline {
     }
     stage('Compile') {
       steps {
-      	script {
-          mvn compile// some block
-        }
+      	sh returnStdout: true, script: 'mvnw compile'
       }/*
       steps {
          sh './var/jenkins_home/workspace/jfrog_interview_project/mvnw compile' //only compilation of the code
