@@ -19,7 +19,6 @@ pipeline {
     }
     stage('Compile') {
        steps {
-         sh ""
          ./$WORKDIR/mvnw compile //only compilation of the code
        }
     }/*
