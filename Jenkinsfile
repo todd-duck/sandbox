@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    JAVA_HOME = '/var/jenkins_home/tools/hudson.model.JDK/Java21/jdk-17.0.10.jdk/Contents/Home/bin'
+    JAVA_HOME = '/var/jenkins_home/tools/hudson.model.JDK/Java17/jdk-17.0.10.jdk/Contents/Home/bin'
      PATH = '$PATH:$JAVA_HOME'
   }
   agent any
