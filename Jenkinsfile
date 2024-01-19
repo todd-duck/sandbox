@@ -17,12 +17,9 @@ pipeline {
         git branch: 'main', changelog: false, poll: false, url: 'https://github.com/todd-duck/duck-clinic.git'
       }
     }
-    stage('Compile') {
+    stage('Build') {
        steps {
-         bash '''
-            #!/bin/bash
-            echo "hello world"
-         '''
+         sh 'mvn clean package' //only compilation of the code
        }
     }/*
     stage('Build') {
