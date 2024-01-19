@@ -17,14 +17,11 @@ pipeline {
         git branch: 'main', changelog: false, poll: false, url: 'https://github.com/todd-duck/duck-clinic.git'
       }
     }
-    stage('Build') {
-      agent {
-      	docker {
-        	image 'maven:3.9.6'
-        }
-      }
+    stage('Compile') {
       steps {
-      	sh 'mvn clean install' 
+      	script {
+          mvn compile// some block
+        }
       }/*
       steps {
          sh './var/jenkins_home/workspace/jfrog_interview_project/mvnw compile' //only compilation of the code
