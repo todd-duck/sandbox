@@ -13,7 +13,8 @@ pipeline {
     stage('Compile') {
       steps {
         sh returnStdout: true, script: 'mvn compile'
-      }
+        }
+    }
     stage('Test') {
       steps {
         sh 'mvn test'
