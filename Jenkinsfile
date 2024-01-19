@@ -18,10 +18,18 @@ pipeline {
       }
     }
     stage('Build') {
-       steps {
-         sh 'mvn clean package' //only compilation of the code
+      agent {
+      	docker {
+        	image 'maven:3.9.6'
+        }
+      }
+      steps {
+      	sh 'mvn clean install' 
+      /*
+      steps {
+         sh './var/jenkins_home/workspace/jfrog_interview_project/mvnw compile' //only compilation of the code
        }
-    }/*
+    }
     stage('Build') {
       steps {
         sh "$MVNHOME/bin/mvn -Dmaven.test.failure.ignore clean package"
