@@ -1,7 +1,6 @@
 pipeline {
   environment {
     JAVA_HOME = '/Library/Java/JavaVirtualMachines/jdk-17.jdk'
-    PATH = '$PATH:$JAVA_HOME/bin'
   }
   agent any
   tools {
