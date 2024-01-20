@@ -2,7 +2,7 @@ pipeline {
   environment{ 
         withRegistry = "todddocker/duck-clinic-dhub"
         registryCredential = 'todddocker'
-        DOCKER_IMAGE_NAME = "duckclinic.jfrog.io/docker-local/petclinic-app:latest"
+        DOCKER_IMAGE_NAME = "duckclinic.jfrog.io/1/petclinic-app:latest"
     }
   agent any
   tools {
@@ -43,7 +43,7 @@ pipeline {
       }
     stage('Push to Jfrog') {
       steps {
-        sh 'docker tag petclinic-app duckclinic.jfrog.io/docker-local/petclinic-app'
+        sh 'docker tag petclinic-app duckclinic.jfrog.io/1/petclinic-app'
         jf 'docker push $DOCKER_IMAGE_NAME'
         }
       }
