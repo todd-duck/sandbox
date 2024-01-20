@@ -39,9 +39,9 @@ pipeline {
       }
     stage('Dockerpush') {
       steps {
-        //withDockerRegistry(credentialsId: 'todddocker', url: 'hub.docker.com') {
+        withDockerRegistry(credentialsId: 'todddocker', url: 'hub.docker.com') {
         script {
-            docker.withRegistry( '', registryCredential ) {
+            //docker.withRegistry( '', registryCredential ) {
             dockerImage.push()
             }
           }
