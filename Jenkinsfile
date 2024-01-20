@@ -39,13 +39,5 @@ pipeline {
           }
         }
       }
-    stage('Push') {
-      steps {
-        script {
-        // Push the Docker image to GitHub Container Registry
-        docker.push("petclinic-app", "ghcr.io/todd-duck/petclinic-app")
-        }
-      }
-    }
   }
 }
