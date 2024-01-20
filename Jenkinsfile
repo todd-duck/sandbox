@@ -37,7 +37,7 @@ pipeline {
           }
         }
       }
-    /* stage('Dockerpush') {
+    stage('Dockerpush') {
       steps {
         //withDockerRegistry(credentialsId: 'todddocker', url: 'hub.docker.com') {
         script {
@@ -46,6 +46,6 @@ pipeline {
             }
           }
         }
-      }*/
+      }
     }
   }  
