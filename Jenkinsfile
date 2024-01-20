@@ -40,7 +40,7 @@ pipeline {
     stage('Push image') {
       steps {
         script {
-          docker.withRegistry('https://hub.docker.com/repository/docker/todddocker/duck-clinic-dhub', 'docker-hub-credentials') {
+          docker.withRegistry('', 'docker-hub-credentials') {
           dockerImage.push()}
         }
       }
