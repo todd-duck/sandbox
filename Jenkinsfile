@@ -38,8 +38,9 @@ pipeline {
         }
       }
     stage('Push image') {
-      docker.withRegistry('https://registry-1.docker.io/v2/', 'docker-hub-credentials') {
-      dockerImage.push()
+      script {
+      docker.withRegistry('https://hub.docker.com/repository/docker/todddocker/duck-clinic-dhub', 'docker-hub-credentials') {
+      dockerImage.push()}}
     }
 /*    stage('Dockerpush') {
       steps {
