@@ -41,7 +41,7 @@ pipeline {
       steps {
         //withDockerRegistry(credentialsId: 'todddocker', url: 'hub.docker.com') {
         script {
-            docker.withRegistry( '', registryCredential ) {
+            docker.withRegistry( 'https://hub.docker.com/repository/docker/todddocker/duck-clinic-dhub', registryCredential ) {
             dockerImage.push()}
             }
           }
