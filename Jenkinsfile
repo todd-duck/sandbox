@@ -1,13 +1,15 @@
 pipeline {
   environment{ 
         withRegistry = "todddocker/duck-clinic-dhub"
-        registryCredential = 'todddocker'        
+        registryCredential = 'todddocker'
+        DOCKER_IMAGE_NAME = "petclinic-app"
     }
   agent any
   tools {
     maven 'maven-3'
     jdk 'Java17'
     'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'
+    jfrog 'jfrog-cli'
   } 
   stages {
     stage('Cloning Git') {
@@ -37,6 +39,16 @@ pipeline {
         script {
           docker.build("petclinic-app")
           }
+        }
+      }
+    stage('Push to Jfrog') {
+      steps {
+        jf 'docker push $DOCKER_IMAGE_NAME'
+        }
+      }
+    stage('Publish build info') {
+      steps {
+        jf 'rt build-publish'
         }
       }
   }
