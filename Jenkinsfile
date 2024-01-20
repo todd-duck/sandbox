@@ -27,9 +27,17 @@ pipeline {
       }
     stage('Docker') {
       steps {
-        docker.build image: 'my-image', tag: 'latest'
+        dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
-    }  
-  }
-
+    stage('Dockerpush') {
+      steps {
+        withDockerRegistry(credentialsId: 'todddocker', url: 'hub.docker.com') {
+        // docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          // some block }
+          }
+        }
+      }
+    }
+  }  
