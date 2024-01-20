@@ -43,6 +43,7 @@ pipeline {
       }
     stage('Push to Jfrog') {
       steps {
+        sh 'docker tag petclinic-app todd-duck/petclinic-app'
         jf 'docker push $DOCKER_IMAGE_NAME'
         }
       }
