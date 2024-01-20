@@ -3,12 +3,12 @@ pipeline {
         registry = "todddocker/duck-clinic-dhub"
         registryCredential = 'todddocker'        
     }
-
-  agent any
+  agent {
+    label 'docker' 
+  }
   tools {
     maven 'maven-3'
     jdk 'Java17'
-    docker 'docker'
     //'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'
   } 
   stages {
