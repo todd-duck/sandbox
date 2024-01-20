@@ -38,13 +38,13 @@ pipeline {
           }
         }
       }
-    /* stage('Push image') {
+    stage('Push image') {
       steps {
         script {
           docker.withRegistry('', 'docker-hub-credentials') {
-          dockerImage.push()}
+          docker.push("my-image")}
         }
       }
-    }*/
+    }
   }
 }
