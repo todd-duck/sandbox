@@ -20,7 +20,7 @@ pipeline {
         sh returnStdout: true, script: 'mvn compile'
         }
     }
-    /*stage('Test') {
+    stage('Test') {
       steps {
         sh 'mvn test -Dmaven.test.failure.ignore=true'
       }
@@ -29,7 +29,7 @@ pipeline {
       steps {
         sh 'mvn clean package'
         }
-      }*/
+      }
     stage('Docker') {
       steps {
         script {
@@ -37,13 +37,13 @@ pipeline {
           }
         }
       }
-    stage('Push image') {
+    /* stage('Push image') {
       steps {
         script {
           docker.withRegistry('', 'docker-hub-credentials') {
           dockerImage.push()}
         }
       }
-    }
+    }*/
   }
 }
