@@ -40,7 +40,7 @@ pipeline {
     stage('Dockerpush') {
       steps {
         withDockerRegistry(credentialsId: 'todddocker', url: 'hub.docker.com') {
-        script {
+        //script {
             //docker.withRegistry( '', registryCredential ) {
             dockerImage.push()
             }
