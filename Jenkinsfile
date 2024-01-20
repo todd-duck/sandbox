@@ -1,4 +1,9 @@
 pipeline {
+  environment{ 
+        registry = "todddocker/duck-clinic-dhub"
+        registryCredential = 'todddocker'        
+    }
+
   agent any
   tools {
     maven 'maven-3'
@@ -34,10 +39,11 @@ pipeline {
       }
     /* stage('Dockerpush') {
       steps {
-        withDockerRegistry(credentialsId: 'todddocker', url: 'hub.docker.com') {
-        // docker.withRegistry( '', registryCredential ) {
+        //withDockerRegistry(credentialsId: 'todddocker', url: 'hub.docker.com') {
+        script {
+            docker.withRegistry( '', registryCredential ) {
             dockerImage.push()
-          // some block }
+            }
           }
         }
       }*/
