@@ -1,13 +1,7 @@
 # Base Image Jan 2024
-FROM eclipse-temurin:17-jdk-jammy 
+FROM openjdk:17-jdk
 
-WORKDIR /app 
+COPY target/spring-petclinic-3.2.0-SNAPSHOT.jar /opt/spring-petclinic.jar
 
-COPY .mvn/ .mvn 
-COPY mvnw pom.xml ./ 
-
-RUN ./mvnw dependency:resolve 
-
-COPY src ./src 
-
-CMD ["./mvnw", "spring-boot:run"]
+EXPOSE 8080
+CMD ["java", "-jar", "/opt/spring-petclinic.jar"]
