@@ -3,9 +3,7 @@ pipeline {
         registry = "todddocker/duck-clinic-dhub"
         registryCredential = 'todddocker'        
     }
-  agent {
-    label 'docker' 
-  }
+  agent any
   tools {
     maven 'maven-3'
     jdk 'Java17'
