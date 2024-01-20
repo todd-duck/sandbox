@@ -37,7 +37,11 @@ pipeline {
           }
         }
       }
-    stage('Dockerpush') {
+    stage('Push image') {
+      docker.withRegistry('https://registry-1.docker.io/v2/', 'docker-hub-credentials') {
+      dockerImage.push()
+    }
+/*    stage('Dockerpush') {
       steps {
         //withDockerRegistry(credentialsId: 'todddocker', url: 'hub.docker.com') {
         script {
@@ -46,6 +50,7 @@ pipeline {
             }
           }
         }
-      }
+      }*/
     }
- 
+  } 
+}
