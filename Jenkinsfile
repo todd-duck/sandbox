@@ -27,10 +27,12 @@ pipeline {
       }
     stage('Docker') {
       steps {
-        dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          }
         }
       }
-    stage('Dockerpush') {
+    /* stage('Dockerpush') {
       steps {
         withDockerRegistry(credentialsId: 'todddocker', url: 'hub.docker.com') {
         // docker.withRegistry( '', registryCredential ) {
@@ -38,6 +40,6 @@ pipeline {
           // some block }
           }
         }
-      }
+      }*/
     }
   }  
