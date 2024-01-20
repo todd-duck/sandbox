@@ -17,12 +17,14 @@ pipeline {
     }
     stage('Compile') {
       steps {
-        sh returnStdout: true, script: 'mvn compile'
+        // sh returnStdout: true, script: 'mvn compile'
+        sh 'mvn compile'
         }
     }
     stage('Test') {
       steps {
-        sh 'mvn test -Dmaven.test.failure.ignore=true'
+        // sh 'mvn test -Dmaven.test.failure.ignore=true'
+        sh 'mvn test'
       }
     }
     stage('Package') {
@@ -33,18 +35,9 @@ pipeline {
     stage('Docker') {
       steps {
         script {
-          docker.build("my-image")
-          //dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          docker.build("petclinic-app")
           }
         }
       }
-    /* stage('Push image') {
-      steps {
-        script {
-          docker.withRegistry('', 'docker-hub-credentials') {
-          docker.push("my-image")}
-        }
-      }
-    }*/
   }
 }
