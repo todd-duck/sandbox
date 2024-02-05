@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_todd_duck_sandbox_1707152128866-pr-trigger-input-set
+  identifier: Build_todd_duck_sandbox_1707152128866prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: sandbox
+  pipeline:
+    identifier: Build_todd_duck_sandbox_1707152128866
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
