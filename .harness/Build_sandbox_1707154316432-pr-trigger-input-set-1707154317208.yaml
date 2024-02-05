@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_sandbox_1707154316432-pr-trigger-input-set
+  identifier: Build_sandbox_1707154316432prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: sandbox
+  pipeline:
+    identifier: Build_sandbox_1707154316432
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
