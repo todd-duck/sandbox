@@ -23,7 +23,7 @@ pipeline:
                   identifier: compile
                   spec:
                     shell: Sh
-                    command: mvn compile
+                    command: gradle build
           platform:
             os: Linux
             arch: Amd64
