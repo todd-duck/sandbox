@@ -23,7 +23,7 @@ pipeline:
                   identifier: compile
                   spec:
                     connectorRef: Docker_Registry
-                    image: abrilprodutosdigitais/temurin-21-jdk-alpine-with-timezone
+                    image: maven:latest
                     shell: Sh
                     command: mvn -DskipTests package
           platform:
