@@ -153,12 +153,11 @@
           <testFailureIgnore>true</testFailureIgnore>
         </configuration>
       </plugin>
+   
       <plugin>
-        <dependency>
-          <groupId>org.owasp</groupId>
-          <artifactId>dependency-check-maven</artifactId>
-          <version>9.0.6</version>
-        </dependency>
+        <groupId>org.owasp</groupId>
+        <artifactId>dependency-check-maven</artifactId>
+        <version>9.0.6</version>
       </plugin>
 
       <plugin>
