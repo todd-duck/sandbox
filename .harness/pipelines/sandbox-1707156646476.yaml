@@ -44,8 +44,6 @@ pipeline:
                   name: build
                   identifier: build
                   spec:
-                    connectorRef: account.harnessImage
-                    image: maven:3.8-jdk-11
                     shell: Sh
                     command: mvn package
           platform:
