@@ -47,7 +47,7 @@ pipeline:
                     connectorRef: account.harnessImage
                     image: maven:3.8-jdk-11
                     shell: Sh
-                    command: mvn clean package dependency:copy-dependencies
+                    command: mvn package
           platform:
             os: Linux
             arch: Amd64
