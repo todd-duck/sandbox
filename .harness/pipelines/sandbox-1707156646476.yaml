@@ -22,7 +22,7 @@ pipeline:
                   name: build
                   identifier: compile
                   spec:
-                    connectorRef: account.harnessImage
+                    connectorRef: Docker_Registry
                     image: 3.9.6-eclipse-temurin-11
                     shell: Sh
                     command: mvn -DskipTests package
