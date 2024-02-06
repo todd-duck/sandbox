@@ -19,28 +19,13 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: check dependencies
-                  identifier: check_dependencies
-                  spec:
-                    connectorRef: account.harnessImage
-                    image: maven:3.8-jdk-11
-                    shell: Sh
-                    command: |-
-                      mvn dependency:resolve -U -DskipTests
-                       reports:
-                         type: JUnit
-                         spec:
-                           paths:
-                             - /harness/target/*.xml
-              - step:
-                  type: Run
-                  name: compile
+                  name: build
                   identifier: compile
                   spec:
                     connectorRef: account.harnessImage
                     image: maven:3.8-jdk-11
                     shell: Sh
-                    command: mvn compile
+                    command: mvn -DskipTests package
           platform:
             os: Linux
             arch: Amd64
