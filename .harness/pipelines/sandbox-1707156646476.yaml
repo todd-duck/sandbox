@@ -34,16 +34,18 @@ pipeline:
                              - /harness/target/*.xml
               - step:
                   type: Run
-                  name: build
+                  name: compile
                   identifier: compile
                   spec:
                     shell: Sh
                     command: mvn compile
               - step:
                   type: Run
-                  name: build
+                  name: mvn_package
                   identifier: build
                   spec:
+                    connectorRef: account.harnessImage
+                    image: eclipse-temurin:11
                     shell: Sh
                     command: mvn package
           platform:
