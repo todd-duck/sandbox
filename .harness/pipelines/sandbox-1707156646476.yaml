@@ -19,11 +19,11 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: compile
+                  name: execute
                   identifier: compile
                   spec:
                     shell: Sh
-                    command: gradle build
+                    command: gradle buildRun
           platform:
             os: Linux
             arch: Amd64
