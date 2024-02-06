@@ -41,13 +41,6 @@ pipeline:
                     command: mvn compile
               - step:
                   type: Run
-                  name: execute
-                  identifier: execute
-                  spec:
-                    shell: Sh
-                    command: gradle buildRun
-              - step:
-                  type: Run
                   name: build
                   identifier: build
                   spec:
