@@ -37,6 +37,8 @@ pipeline:
                   name: compile
                   identifier: compile
                   spec:
+                    connectorRef: account.harnessImage
+                    image: maven:3.8-jdk-11
                     shell: Sh
                     command: mvn compile
           platform:
