@@ -23,7 +23,7 @@ pipeline:
                   identifier: compile
                   spec:
                     connectorRef: account.harnessImage
-                    image: eclipse-temurin:17-jdk
+                    image: 3.9.6-eclipse-temurin-11
                     shell: Sh
                     command: mvn -DskipTests package
           platform:
