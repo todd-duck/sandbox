@@ -23,7 +23,7 @@ pipeline:
                   identifier: compile
                   spec:
                     connectorRef: Docker_Registry
-                    image: 3.9.6-eclipse-temurin-11
+                    image: amd64/eclipse-temurin:latest
                     shell: Sh
                     command: mvn -DskipTests package
           platform:
