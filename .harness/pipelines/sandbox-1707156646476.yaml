@@ -19,8 +19,15 @@ pipeline:
             steps:
               - step:
                   type: Run
-                  name: execute
+                  name: build
                   identifier: compile
+                  spec:
+                    shell: Sh
+                    command: gradle build
+              - step:
+                  type: Run
+                  name: execute
+                  identifier: execute
                   spec:
                     shell: Sh
                     command: gradle buildRun
