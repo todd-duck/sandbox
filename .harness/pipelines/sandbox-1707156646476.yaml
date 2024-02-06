@@ -39,15 +39,6 @@ pipeline:
                   spec:
                     shell: Sh
                     command: mvn compile
-              - step:
-                  type: Run
-                  name: mvn_package
-                  identifier: build
-                  spec:
-                    connectorRef: account.harnessImage
-                    image: eclipse-temurin:11
-                    shell: Sh
-                    command: mvn package
           platform:
             os: Linux
             arch: Amd64
