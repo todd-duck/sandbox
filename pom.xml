@@ -98,7 +98,7 @@
     <dependency>
       <groupId>org.owasp</groupId>
       <artifactId>dependency-check-maven</artifactId>
-      <version>8.2.1</version>
+      <version>9.0.9</version>
       <type>maven-plugin</type>
     </dependency>
     <!-- Webjars -->
@@ -162,7 +162,7 @@
       <plugin>
         <groupId>org.owasp</groupId>
         <artifactId>dependency-check-maven</artifactId>
-        <version>8.2.1</version>
+        <version>9.0.9</version>
         <executions>
           <execution>
             <goals>
